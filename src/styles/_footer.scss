@@ -1,0 +1,66 @@
+.footer {
+	height: fit-content;
+
+	max-width: 1920px;
+	margin: 0 auto;
+
+	background-color: $transbluefooter;
+
+	padding: 3rem 1rem 3rem 1rem;
+
+	display: flex;
+	gap: 5rem;
+
+	&__image {
+		margin-left: auto;
+		position: relative;
+		height: 40rem;
+	}
+
+	&__map {
+
+		& h1 {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			& img {
+				width: 40px;
+			}
+		}
+
+		& h2 {
+			display: flex;
+			align-items: center;
+			gap: 0.3rem;
+
+			font-size: 17px;
+			& img {
+				width: 28px;
+			}
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		&_contacts {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+
+			&-block {
+				display: flex;
+				gap: 0.5rem;
+				align-items: center;
+				& a {
+					font-size: 20px;
+					text-decoration: none;
+				}
+				& img {
+					height: 24px;
+				}
+			}
+		}
+	}
+}

@@ -19,7 +19,9 @@
 
 	transform: translate(0, 150px);
 
-	&:hover{
+	z-index: 1;
+
+	&:hover {
 		opacity: 1;
 	}
 
@@ -28,7 +30,7 @@
 	}
 }
 
-.section__top_button {
+.section__top_fixed-button {
 	margin-top: 2.4rem;
 
 	width: 15rem;
@@ -52,11 +54,12 @@
 
 	@include button-hover;
 
+
 	& img {
 		width: 2rem;
 	}
 }
 
-.logo__button{
+.logo__button {
 	@include button-hover;
 }

@@ -51,12 +51,7 @@ input {
 
 *,
 html {
-  margin: 0;
   font-family: "Montserrat", sans-serif !important;
-}
-
-.p {
-  width: 10rem;
 }
 
 .main {
@@ -76,6 +71,7 @@ html {
   transition: all 0.3s, opacity 0.15s;
   opacity: 0.6;
   transform: translate(0, 150px);
+  z-index: 1;
 }
 .scrollup__button:hover {
   opacity: 1;
@@ -84,7 +80,7 @@ html {
   height: 100%;
 }
 
-.section__top_button {
+.section__top_fixed-button {
   margin-top: 2.4rem;
   width: 15rem;
   padding: 0.5rem;
@@ -101,10 +97,10 @@ html {
   transition: all 0.3s, filter 0.2s;
   transition: filter 0.3s;
 }
-.section__top_button:hover {
+.section__top_fixed-button:hover {
   filter: contrast(70%) brightness(120%);
 }
-.section__top_button img {
+.section__top_fixed-button img {
   width: 2rem;
 }
 
@@ -152,6 +148,10 @@ html {
   }
 }
 @media screen and (max-width: 1649px) {
+  .section__about_bottomblock {
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+  }
   .header__logo {
     display: flex;
     align-items: center;
@@ -191,7 +191,13 @@ html {
     display: none;
   }
 }
-@media screen and (max-width: 992px) and (max-width: 576px) {
+@media screen and (max-width: 992px) and (max-width: 776px) {
+  .title__big_white {
+    font-size: 38px !important;
+  }
+  .title__small_white {
+    font-size: 16px !important;
+  }
   .header {
     height: 70px !important;
   }
@@ -201,6 +207,11 @@ html {
   }
   .header__logo_image {
     height: 70px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .footer {
+    flex-direction: column !important;
   }
 }
 .title__small_white {
@@ -234,11 +245,21 @@ html {
   line-height: 1em;
 }
 
+.title__big_black {
+  font-size: 35px;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+}
+
 .offcanvas {
   transition: all 0.3s !important;
 }
 
 .header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   max-width: 1920px;
   width: 100%;
   height: 95px;
@@ -248,7 +269,8 @@ html {
   gap: 2rem;
   margin: auto;
   white-space: nowrap;
-  transition: all 0.3s;
+  transition: all 0.3s, transform 0s, left 0s, top 0s;
+  z-index: 1;
 }
 .header__logo {
   height: 100%;
@@ -271,18 +293,15 @@ html {
   color: white;
 }
 
-.section__top_fixed {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%);
+.section__top {
+  position: relative;
   width: 100%;
   max-width: 1920px;
   height: 900px;
   overflow: hidden;
-  z-index: -1;
+  z-index: 0;
 }
-.section__top_fixed::before {
+.section__top::before {
   content: "";
   position: absolute;
   top: 0;
@@ -293,27 +312,171 @@ html {
   background: #08071c;
   opacity: 0.5;
 }
-.section__top_fixed-video {
-  width: 100%;
+.section__top_video {
+  height: 100;
   max-width: 1920px;
   min-width: 1920px;
   z-index: -2;
 }
-
-.section__top {
+.section__top_fixed {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 3rem;
-  margin-bottom: 20rem;
 }
-.section__top_line {
+.section__top_fixed-line {
   height: 2px;
   width: 15rem;
   background-color: white;
 }
-
-.section__about_logo {
+.section__about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem 0;
+  gap: 5rem;
+}
+.section__about_topblock {
+  width: 60%;
+  display: flex;
+  gap: 4rem;
+}
+.section__about_topblock-logo {
   width: 200px;
+  height: 400px;
+}
+.section__about_topblock-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.section__about_topblock-text .about__paragraph {
+  font-size: 22px;
+  line-height: 2rem;
+  word-spacing: 5px;
+}
+.section__about_topblock-text .about__paragraph_highlight {
+  font-size: 25px;
+  font-weight: 500;
+}
+.section__about_topblock-text .about__devide {
+  display: flex;
+  gap: 4rem;
+}
+.section__about_topblock-text .about__devide_item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 26px;
+  font-weight: 600;
+}
+.section__about_topblock-text .about__devide_item-color {
+  font-size: 18px;
+  color: #342E8C;
+  font-weight: 700;
+}
+.section__about_topblock-text .about__devide_item-color img {
+  width: 20px;
+  margin-right: 0.3rem;
+}
+.section__about_bottomblock {
+  width: 60%;
+  height: 50rem;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+.section__about_bottomblock-plan {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+.section__about_bottomblock-plan .plan__item {
+  position: relative;
+  background-color: rgba(52, 46, 140, 0.0666666667);
+  border-radius: 1rem;
+  padding: 0 0.5rem;
+  width: 36rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 5.5rem;
+  font-size: 18px;
+  font-weight: 500;
+  overflow: hidden;
+}
+.section__about_bottomblock-plan .plan__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.2rem;
+  height: 100%;
+  background-color: rgba(52, 46, 140, 0.0666666667);
+}
+.section__about_bottomblock-plan img {
+  width: 25px;
+  height: 25px;
+}
+
+.footer {
+  height: -moz-fit-content;
+  height: fit-content;
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: rgba(35, 31, 94, 0.1215686275);
+  padding: 3rem 1rem 3rem 1rem;
+  display: flex;
+  gap: 5rem;
+}
+.footer__image {
+  margin-left: auto;
+  position: relative;
+  height: 40rem;
+}
+.footer__map h1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.footer__map h1 img {
+  width: 40px;
+}
+.footer__map h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 17px;
+}
+.footer__map h2 img {
+  width: 28px;
+}
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.footer__info_contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.footer__info_contacts-block {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.footer__info_contacts-block a {
+  font-size: 20px;
+  text-decoration: none;
+}
+.footer__info_contacts-block img {
+  height: 24px;
 }/*# sourceMappingURL=main.css.map */
