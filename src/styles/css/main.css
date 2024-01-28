@@ -222,7 +222,11 @@ html {
   text-align: center;
   margin-bottom: 1.5rem;
 }
-
+.title__small_black {
+  font-size: 24px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+}
 .title__big_white {
   font-size: 80px;
   font-weight: 900;
@@ -244,11 +248,27 @@ html {
   margin: 0;
   line-height: 1em;
 }
-
 .title__big_black {
   font-size: 35px;
-  font-weight: 600;
+  font-weight: 700;
   color: rgb(0, 0, 0);
+}
+.title__kondimp {
+  font-size: 56px;
+  font-weight: 800;
+  color: #173863;
+}
+
+.highlight {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.paragraph {
+  font-size: 22px;
+  line-height: 2rem;
+  word-spacing: 3px;
+  font-weight: 400;
 }
 
 .offcanvas {
@@ -293,6 +313,9 @@ html {
   color: white;
 }
 
+.section {
+  margin: 0 auto 3rem auto;
+}
 .section__top {
   position: relative;
   width: 100%;
@@ -337,12 +360,10 @@ html {
 .section__about {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 3rem 0;
   gap: 5rem;
+  width: 60%;
 }
 .section__about_topblock {
-  width: 60%;
   display: flex;
   gap: 4rem;
 }
@@ -350,42 +371,32 @@ html {
   width: 200px;
   height: 400px;
 }
-.section__about_topblock-text {
+.section__about_topblock-textblock {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
-.section__about_topblock-text .about__paragraph {
-  font-size: 22px;
-  line-height: 2rem;
-  word-spacing: 5px;
-}
-.section__about_topblock-text .about__paragraph_highlight {
-  font-size: 25px;
-  font-weight: 500;
-}
-.section__about_topblock-text .about__devide {
+.section__about_topblock-textblock .about__devide {
   display: flex;
   gap: 4rem;
 }
-.section__about_topblock-text .about__devide_item {
+.section__about_topblock-textblock .about__devide_item {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   font-size: 26px;
   font-weight: 600;
 }
-.section__about_topblock-text .about__devide_item-color {
+.section__about_topblock-textblock .about__devide_item-color {
   font-size: 18px;
   color: #342E8C;
   font-weight: 700;
 }
-.section__about_topblock-text .about__devide_item-color img {
+.section__about_topblock-textblock .about__devide_item-color img {
   width: 20px;
   margin-right: 0.3rem;
 }
 .section__about_bottomblock {
-  width: 60%;
   height: 50rem;
   display: flex;
   gap: 2rem;
@@ -400,30 +411,49 @@ html {
 }
 .section__about_bottomblock-plan .plan__item {
   position: relative;
-  background-color: rgba(52, 46, 140, 0.0666666667);
+  background-color: transparent;
   border-radius: 1rem;
-  padding: 0 0.5rem;
+  padding: 0.5rem 0.5rem;
   width: 36rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   height: 5.5rem;
   font-size: 18px;
   font-weight: 500;
   overflow: hidden;
+  box-shadow: 0px 0px 5px rgba(35, 31, 94, 0.1215686275);
+}
+.section__about_bottomblock-plan .plan__item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 100%;
+  background-color: rgba(52, 46, 140, 0.0666666667);
+  box-shadow: 10px 0 1px rgba(52, 46, 140, 0.0666666667);
 }
 .section__about_bottomblock-plan .plan__item::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 2.2rem;
+  width: 100%;
   height: 100%;
-  background-color: rgba(52, 46, 140, 0.0666666667);
+  background-image: url(../../img/logo-bg-blue-condense-checker-test.png);
+  background-position: center;
+  background-size: 50rem;
+  filter: opacity(6%);
+  z-index: -1;
 }
 .section__about_bottomblock-plan img {
   width: 25px;
   height: 25px;
+}
+.section__kondimp {
+  display: flex;
+  gap: 2rem;
 }
 
 .footer {

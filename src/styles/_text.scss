@@ -1,43 +1,71 @@
-.title__small_white {
-	font-size: 18px;
-	font-weight: 700;
-	color: white;
+.title {
+	&__small {
+		&_white {
+			font-size: 18px;
+			font-weight: 700;
+			color: white;
 
-	text-transform: uppercase;
+			text-transform: uppercase;
 
-	text-align: center;
+			text-align: center;
 
-	margin-bottom: 1.5rem;
+			margin-bottom: 1.5rem;
+		}
+		&_black {
+			font-size: 24px;
+			font-weight: 700;
+			color: rgb(0, 0, 0);
+		}
+	}
+
+	&__big {
+		&_white {
+			font-size: 80px;
+			font-weight: 900;
+			color: white;
+
+			margin: 1rem 0 3rem 0;
+
+			&-top {
+				font-size: 0.83em;
+				margin: 0;
+				line-height: 1em;
+			}
+
+			&-middle {
+				font-size: 1.559em;
+				margin: 0;
+				line-height: 1em;
+			}
+
+			&-bottom {
+				font-size: 1.465em;
+				margin: 0;
+				line-height: 1em;
+			}
+		}
+
+		&_black {
+			font-size: 35px;
+			font-weight: 700;
+			color: rgb(0, 0, 0);
+		}
+	}
+	&__kondimp{
+		font-size: 56px;
+		font-weight: 800;
+		color: $indigo;
+	}
 }
 
-.title__big_white {
-	font-size: 80px;
-	font-weight: 900;
-	color: white;
-
-	margin: 1rem 0 3rem 0;
-
-	&-top {
-		font-size: 0.83em;
-		margin: 0;
-		line-height: 1em;
-	}
-
-	&-middle {
-		font-size: 1.559em;
-		margin: 0;
-		line-height: 1em;
-	}
-
-	&-bottom {
-		font-size: 1.465em;
-		margin: 0;
-		line-height: 1em;
-	}
+.highlight {
+	font-size: 25px;
+	font-weight: 500;
 }
 
-.title__big_black{
-	font-size: 35px;
-	font-weight: 600;
-	color: rgb(0, 0, 0);
+.paragraph {
+	font-size: 22px;
+	line-height: 2rem;
+	word-spacing: 3px;
+	font-weight: 400;
 }
